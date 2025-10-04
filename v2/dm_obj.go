@@ -13,15 +13,15 @@ const (
 
 // DMEvent represents a direct message event
 type DMEvent struct {
-	ID               string             `json:"id"`
-	Text             string             `json:"text,omitempty"`
-	EventType        string             `json:"event_type"`
-	CreatedAt        time.Time          `json:"created_at,omitempty"`
-	SenderID         string             `json:"sender_id,omitempty"`
-	DMConversationID string             `json:"dm_conversation_id"`
-	ReferencedTweet  *DMReferencedTweet `json:"referenced_tweets,omitempty"`
-	MediaKeys        []string           `json:"media_keys,omitempty"`
-	Attachments      *DMAttachments     `json:"attachments,omitempty"`
+	ID               string               `json:"id"`
+	Text             string               `json:"text,omitempty"`
+	EventType        string               `json:"event_type"`
+	CreatedAt        time.Time            `json:"created_at,omitempty"`
+	SenderID         string               `json:"sender_id,omitempty"`
+	DMConversationID string               `json:"dm_conversation_id"`
+	ReferencedTweets []*DMReferencedTweet `json:"referenced_tweets,omitempty"`
+	MediaKeys        []string             `json:"media_keys,omitempty"`
+	Attachments      *DMAttachments       `json:"attachments,omitempty"`
 }
 
 // DMReferencedTweet represents a referenced tweet in a DM
