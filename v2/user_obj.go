@@ -44,20 +44,26 @@ func userFieldStringArray(arr []UserField) []string {
 
 // UserObj contains Twitter user account metadata describing the referenced user
 type UserObj struct {
-	ID              string          `json:"id"`
-	Name            string          `json:"name"`
-	UserName        string          `json:"username"`
-	CreatedAt       string          `json:"created_at,omitempty"`
-	Description     string          `json:"description,omitempty"`
-	Entities        *EntitiesObj    `json:"entities,omitempty"`
-	Location        string          `json:"location,omitempty"`
-	PinnedTweetID   string          `json:"pinned_tweet_id,omitempty"`
-	ProfileImageURL string          `json:"profile_image_url,omitempty"`
-	Protected       bool            `json:"protected,omitempty"`
-	PublicMetrics   *UserMetricsObj `json:"public_metrics,omitempty"`
-	URL             string          `json:"url,omitempty"`
-	Verified        bool            `json:"verified,omitempty"`
-	WithHeld        *WithHeldObj    `json:"withheld,omitempty"`
+	ID                 string          `json:"id"`
+	Name               string          `json:"name"`
+	UserName           string          `json:"username"`
+	CreatedAt          string          `json:"created_at,omitempty"`
+	Description        string          `json:"description,omitempty"`
+	Entities           *EntitiesObj    `json:"entities,omitempty"`
+	Location           string          `json:"location,omitempty"`
+	PinnedTweetID      string          `json:"pinned_tweet_id,omitempty"`
+	ProfileImageURL    string          `json:"profile_image_url,omitempty"`
+	Protected          bool            `json:"protected,omitempty"`
+	PublicMetrics      *UserMetricsObj `json:"public_metrics,omitempty"`
+	URL                string          `json:"url,omitempty"`
+	Verified           bool            `json:"verified,omitempty"`
+	WithHeld           *WithHeldObj    `json:"withheld,omitempty"`
+	VerifiedType       string          `json:"verified_type"`
+	ConfirmedEmail     string          `json:"confirmed_email"`
+	Subscription       SubscriptionObj `json:"subscription"`
+	SubscriptionType   string          `json:"subscription_type"`
+	IsIdentityVerified bool            `json:"is_identity_verified"`
+	ReceivesYourDM     bool            `json:"receives_your_dm"`
 }
 
 // UserMetricsObj contains details about activity for this user
@@ -66,4 +72,8 @@ type UserMetricsObj struct {
 	Following int `json:"following_count"`
 	Tweets    int `json:"tweet_count"`
 	Listed    int `json:"listed_count"`
+}
+
+type SubscriptionObj struct {
+	SubscribesToYou string `json:"subscribes_to_you"`
 }
