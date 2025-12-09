@@ -58,6 +58,7 @@ type UserObj struct {
 	URL             string         `json:"url"`
 	Verified        bool           `json:"verified"`
 	WithHeld        WithHeldObj    `json:"withheld"`
+	VerifiedType    string         `json:"verified_type"`
 }
 
 // UserMetricsObj contains details about activity for this user
